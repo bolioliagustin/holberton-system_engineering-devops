@@ -1,2 +1,8 @@
 #!/usr/bin/env bash
+<<<<<<< HEAD
 echo $$
+=======
+#the display pid of the current process
+
+echo $$
+>>>>>>> d4dd3fb6c8a8fa968db348e0c97f08dbe7517278

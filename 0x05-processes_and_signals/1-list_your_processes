@@ -1,2 +1,8 @@
 #!/usr/bin/env bash
+<<<<<<< HEAD
 ps l
+=======
+#that displays a list of currently running processes
+
+ps auxf
+>>>>>>> d4dd3fb6c8a8fa968db348e0c97f08dbe7517278
