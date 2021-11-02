@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
-# Displays Best School 10 times.
+#script that loops from 1 to 10 and
 
 i=1
 while [ $i -le 10 ]
 do
-	echo "Best School"
-if [ $i -eq 4 ]
-then
-	echo "bad luck"
-elif [ $i -eq 8 ]
-then
-	echo "good luck"
-fi
-	((i++))
+  ((i++))
+  if [ $i == 5 ]
+  then
+      echo "bad luck"
+  elif [ $i == 9 ]
+  then
+      echo "good luck"
+  else
+      echo "Best School"
+  fi
 done
