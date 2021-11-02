@@ -8,7 +8,7 @@ do
 	case $i in
 		5)
 			echo "bad luck from China";;
-		10)
+		9)
 			echo "bad luck from Japan";;
 		17)
 			echo "bad luck from Italy";;
