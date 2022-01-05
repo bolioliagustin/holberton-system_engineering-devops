@@ -1,11 +1,9 @@
 #change ssh config
-file_line {'/etc/ssh/sshd_config':
-  ensure => present,
+file_line {'Turn off Passwd':
   path => '/etc/ssh/sshd_config',
   line => 'PasswordAuthentication no',
 }
-file_line {'/etc/ssh/sshd_config2':
-  ensure => present,
+file_line {'Disable root login':
   path => '/etc/ssh/sshd_config',
   line => 'IdentityFile /root/.ssh/school',
 }
