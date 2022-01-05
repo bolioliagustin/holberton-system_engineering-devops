@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#install nginx and create index.html file
+
+sudo apt-get -y update && upgrade
+sudo apt-get -y install nginx
+sudo mkdir -p /var/www/html
+sudo touch /var/www/html/index.html
+sudo echo "Hello World" > /var/www/html/index.html
+sudo service nginx start
