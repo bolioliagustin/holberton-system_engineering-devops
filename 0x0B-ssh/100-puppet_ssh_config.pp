@@ -1,11 +1,6 @@
-#change config ssh
+#make chanes
 
-file_line {'Turn off':
-  path => '/etc/ssh/ssh_config',
-  line => 'PasswordAuthentication no',
+exec { 'echo':
+  path    => '/bin/',
+  command => 'echo "IdentityFile ~/.ssh/school\n PasswordAuthentication no" >> /etc/ssh/ssh_config',
 }
-
-file_line {'Declare identity':
-  path => '/etc/ssh/ssh_config',
-  line => 'IdentityFile ~/.ssh/school',
-}C
