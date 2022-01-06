@@ -1,0 +1,3 @@
+#!/usr/bn/env bash
+#Restart apache2
+service apache2 restarti
