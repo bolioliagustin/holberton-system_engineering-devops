@@ -12,5 +12,5 @@ backend http_back
     balance roundrobin
     server 3290-web-01 35.237.241.192 check
     server 3290-web-02 34.139.46.240 check
-" | sudo tee /etc/haproxy/haproxy.cfg
+" >> /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
