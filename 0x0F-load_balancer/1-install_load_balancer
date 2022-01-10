@@ -4,14 +4,13 @@
 sudo apt -y update
 sudo apt -y install haproxy
 printf %s "
-frontend http-in
-    bind *:80
-    mode http
-    default_backend servers
-backend servers
-    mode http
+frontend http_front
+   bind *:80
+   stats uri /haproxy?stats
+   default_backend http_back
+backend http_back
     balance roundrobin
-    server 3294-web-01 35.243.139.68 check
-    server 3294-web-02 34.75.56.96 check
+    server 3290-web-01 35.237.241.192 check
+    server 3290-web-02 34.139.46.240 check
 " | sudo tee /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
