@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #script that run ngix and listen on port 80 of all the servers
 rm /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled
