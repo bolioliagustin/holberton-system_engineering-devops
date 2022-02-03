@@ -1,11 +1,5 @@
 #!/usr/bin/python3
-"""
-Export data in the CSV format
-Request:
-    - Records all tasks that are owned by this employee
-    - Format must be: "USER_ID","USERNAME","TASK_COMPLETED_STATUS","TASK_TITLE"
-    - File name must be: USER_ID.csv
-"""
+""" Export data in the CSV format """
 
 
 import csv
@@ -18,7 +12,7 @@ if __name__ == "__main__":
     Export data in the CSV format
     """
     user_id = argv[1]
-    user = requests.get(f"https://jsonplaceholder.typicode.com/users/{}"
+    user = requests.get("https://jsonplaceholder.typicode.com/users/{}"
                         .format(user_id)).json()
     todos = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}"
                          .format(user_id)).json()
