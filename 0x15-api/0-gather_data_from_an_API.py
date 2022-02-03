@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-""" script that using an API, for a given employee ID, returns information """
+"""
+script that using an API,
+for a given employee ID,
+returns information
+"""
 
 
 import json
