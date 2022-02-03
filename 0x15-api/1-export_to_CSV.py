@@ -8,9 +8,6 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    """
-    Export data in the CSV format
-    """
     user_id = argv[1]
     user = requests.get("https://jsonplaceholder.typicode.com/users/{}"
                         .format(user_id)).json()
@@ -21,4 +18,3 @@ if __name__ == "__main__":
         for todo in todos:
             writer.writerow([user.get("id"), user.get("username"),
                              todo.get("completed"), todo.get("title")])
-    csv_file.close()
