@@ -1,21 +1,14 @@
 #!/usr/bin/env bash
-#Configure your domain zone so that the subdomain www points to your load-balancer IP 
+#Configure your domain zone so that the subdomain www points to your load-balancer IP (lb-01).
 
-func () {
-    SUB_DOMAIN="$2"
-    DOMAIN_COMPLETE="$1.$2"
-    INFO="$(dig $DOMAIN_COMPLETE" | grep "ANSWER SECTION" | awk 'NR==2')"
-    IP="$(echo $INFO | awk '{print $5}')"
-    RECORD="$(echo $INFO | awk '{print $4}')"
-    echo The subdomain $SUB_DOMAIN is a $RECORD and points to $IP
-}
-
-if [[ -z "$2" ]]; then
-    SUB_DOMAIN_LIST="www lb-01 web-01 web-02"
-    for it in $SUB_DOMAIN_LIST; do
-        func "$1" "$it"
+subdomains_list=("www" "lb-01" "web-01" "web-02")
+if [ "$#" -eq 1 ]
+then
+    for i in "${subdomains_list[@]}"
+    do
+        dig "$i"."$1" | grep -e ^"$i" | awk '{print "The subdomain '"$i"' is a", $4, "record and points to", $5}'
     done
-else
-    func "$1" "$2"
+elif [ "$#" -eq 2 ]
+then
+    dig "$2"."$1" | grep -e ^"$2" | awk '{print "The subdomain '"$2"' is a", $4, "record and points to", $5}'
 fi
-exit 0
